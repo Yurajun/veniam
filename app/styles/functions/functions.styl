@@ -1,0 +1,8 @@
+map-get($list, $value)
+	for $key, $val in $list
+		if ($key == $value)
+			return $val
+
+nth($list, $value)
+	for $val, $i in $list
+		return $val if $i == $value

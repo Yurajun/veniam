@@ -1,0 +1,46 @@
+breakpoint-next($name, $breakpoints = $grid-breakpoints, $breakpoint-names = keys($breakpoints))
+	$n = index($breakpoint-names, $name)
+	if ($n < length($breakpoint-names))
+		return nth($breakpoint-names, $n + 1)
+	else
+		null
+
+breakpoint-min($name, $breakpoints = $grid-breakpoints)
+	$min = map-get($breakpoints, $name)
+	if($min != 0)
+		return $min
+	else
+		return $name
+
+breakpoint-max($name, $breakpoints = $grid-breakpoints)
+	$next = breakpoint-next($name, $breakpoints)
+	if($next)
+		return breakpoint-min($next, $breakpoints) - 1px
+	else
+		return null
+
+media-breakpoint-up($name, $breakpoints = $grid-breakpoints)
+	$min = breakpoint-min($name, $breakpoints)
+	if $min
+		@media (min-width: $min)
+			{block}
+	else
+		{block}
+
+media-breakpoint-down($name, $breakpoints = $grid-breakpoints)
+	$max = breakpoint-max($name, $breakpoints);
+	if $max
+		@media (max-width: $max)
+			{block}
+	else
+		{block}
+
+media-breakpoint-only($name, $breakpoints = $grid-breakpoints)
+	+media-breakpoint-up($name, $breakpoints)
+		+media-breakpoint-down($name, $breakpoints)
+			{block}
+
+media-breakpoint-between($lower, $upper, $breakpoints = $grid-breakpoints)
+	+media-breakpoint-up($lower, $breakpoints)
+		+media-breakpoint-down($upper, $breakpoints)
+			{block}

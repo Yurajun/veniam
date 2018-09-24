@@ -42,3 +42,38 @@ retinaBackground($image, $ext = 'png') {
 		background-image url('../images/' + $image + '@2x.' + $ext)
 	}
 }
+
+font-face($font-name, $file-name, $font-name-space, $font-name-no-space, $weight = normal, $style = normal)
+	@font-face
+		font-family $font-name
+		src url($file-name + '.eot')
+		src local($font-name-space), local($font-name-no-space),
+				url($file-name + '.eot?#iefix') format('embedded-opentype'),
+				url($file-name + '.woff2') format('woff2'),
+				url($file-name + '.woff') format('woff'),
+				url($file-name + '.ttf') format('truetype'),
+				url($file-name + '.svg#' + $font-name-no-space + '') format('svg')
+		font-weight $weight
+		font-style $style
+		font-display fallback
+
+px2rem($px)
+	// number
+	if typeof($px) == 'unit'
+		if unit($px) == 'rem'
+			$px
+		else
+			unit($px / $font-size-root, 'rem')
+	// string
+	else
+		if unit(convert(unquote($px))) == 'rem'
+			convert(unquote($px))
+		else
+			unit(convert(unquote($px)) / $font-size-root, 'rem')
+
+-ae-map-serialize($map)
+	$str = ''
+	for $key, $value in $map
+		$str = $str + $key + '=' + $value + '&'
+	$str = slice($str, 0, -1)
+	return $str

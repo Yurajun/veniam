@@ -1,0 +1,38 @@
+// Grid breakpoints
+$grid-breakpoints = {
+	'xs': 320px,
+	'xl': 1040px
+}
+
+$container-max-widths = {
+	'xs': calc(100% - 20px),
+	'xl': 1040px
+}
+
+$container-margin-size = {
+	'xs': 20px
+	'xl': 40px
+}
+
+make-container()
+	margin-right auto
+	margin-left auto
+	width 100%
+
+// For each breakpoint, define the maximum width of the container in a media query
+make-container-max-widths($max-widths = $container-max-widths, $breakpoints = $grid-breakpoints)
+	for $breakpoint, $container-max-width in $max-widths
+		+media-breakpoint-up($breakpoint, $breakpoints)
+			max-width $container-max-width
+
+make-margin-to-container($margin = $container-margin-size, $breakpoints = $grid-breakpoints)
+	for $breakpoint, $margin in $margin
+		+media-breakpoint-up($breakpoint, $breakpoints)
+			margin-left $margin
+			margin-right $margin
+
+if $enable-grid-classes
+	.container
+		make-container()
+		make-margin-to-container()
+		make-container-max-widths()

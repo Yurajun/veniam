@@ -1,0 +1,27 @@
+// Colors
+$base-colors = {
+	'black':                #000,
+	'white':                #fff,
+	'gray-light':           #eaeaea,
+	'gray-lighter':         #f7f7f7,
+	'gray-lightest':        #f1f1f1,
+	'orange':               #f9c869,
+	'red':                  #f86868,
+	'blue':                 #66c7cd,
+	'dark':                 #1a1a1a,
+	'dark-red':             #3d3c3c
+}
+
+$brand-colors = {
+	'accent': map-get($base-colors, 'orange'),
+	'accent-hover-color': darken(map-get($base-colors, 'orange'), 10%),
+	'accent-active-color': darken(map-get($base-colors, 'orange'), 20%),
+	// 'secondary-color': map-get($base-colors, 'yellow'),
+	'body-color': map-get($base-colors, 'black'),
+	'body-bg': map-get($base-colors, 'white'),
+}
+
+$colors = merge($base-colors, $brand-colors)
+
+colors($color)
+	return map-get($colors, $color)

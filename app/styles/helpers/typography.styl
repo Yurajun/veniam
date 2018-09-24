@@ -1,0 +1,54 @@
+// Typography
+// $font-family-walsheimpro:           "GT Walsheim Pro", Helvetica, Arial, sans-serif !default;
+// $font-family-minionpro:             "Minion Pro", Helvetica, Arial, sans-serif !default;
+
+// $font-family-sans-serif =            "Helvetica Neue", Helvetica, Arial, sans-serif
+$font-family-sans-serif =            "Open Sans", sans-serif
+$font-family-serif =                 Georgia, "Times New Roman", Times, serif
+$font-family-monospace =             Consolas, 'Liberation Mono', Courier, monospace
+$font-family-base =                  $font-family-sans-serif
+
+// Pixel value used to responsively scale all typography. Applied to the `<html>` element.
+// $font-size-root =                    18px
+$font-size-root =                    16px
+
+$font-size-base =                    1rem
+$font-size-lg =                      1.111rem // 20px
+$font-size-sm =                      .888rem // 16px
+$font-size-xs =                      .777rem // 12px
+
+// Headings
+$font-size-h1 =                      3.333rem // 60px
+$font-size-h2 =                      2.222rem // 40px
+$font-size-h3 =                      1.777rem // 32px
+$font-size-h4 =                      1.222rem // 22px
+$font-size-h5 =                      1rem // 18px
+$font-size-h6 =                      .888rem // 16px
+
+$font-weight-base =                  300
+
+$line-height-base =                  1.4
+$line-height-sm =                    1.3
+$line-height-xs =                    1.2
+
+$line-height-h1 =                    1
+$line-height-h2 =                    1
+$line-height-h3 =                    1
+$line-height-h4 =                    1
+$line-height-h5 =                    1
+$line-height-h6 =                    1
+
+$typography-margin-bottom =          map-get($spacers, 2)
+$typography-margin-top =             map-get($spacers, 3)
+
+$headings-font-family =              $font-family-base
+$headings-font-weight =              $font-weight-base
+$headings-color =                    colors('body-color')
+
+$text-muted =                        colors('gray')
+
+base-font()
+	font-family $font-family-base
+	font-size $font-size-base
+	line-height $line-height-base
+
