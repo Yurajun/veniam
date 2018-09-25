@@ -2,23 +2,32 @@
 $base-colors = {
 	'black':                #000,
 	'white':                #fff,
-	'gray-light':           #eaeaea,
-	'gray-lighter':         #f7f7f7,
-	'gray-lightest':        #f1f1f1,
-	'orange':               #f9c869,
-	'red':                  #f86868,
-	'blue':                 #66c7cd,
-	'dark':                 #1a1a1a,
-	'dark-red':             #3d3c3c
+	'blue':                 #5d8ea8,
+	'dark-blue':            #3a4750,
+	'gray-light':           #e1e1e1,
+	'gray-lighter':         #e4e8eb,
+	'dark-gray':            #6e6e6e,
+	'dark':                 #373737,
+	'blak-light':           #1d1d1d
+
+
+	// 'gray-light':           #eaeaea,
+	// 'gray-lighter':         #f7f7f7,
+	// 'gray-lightest':        #f1f1f1,
+	// 'orange':               #f9c869,
+	// 'red':                  #f86868,
+	// 'blue':                 #66c7cd,
+	// 'dark':                 #1a1a1a,
+	// 'dark-red':             #3d3c3c
 }
 
 $brand-colors = {
-	'accent': map-get($base-colors, 'orange'),
-	'accent-hover-color': darken(map-get($base-colors, 'orange'), 10%),
-	'accent-active-color': darken(map-get($base-colors, 'orange'), 20%),
-	// 'secondary-color': map-get($base-colors, 'yellow'),
-	'body-color': map-get($base-colors, 'black'),
-	'body-bg': map-get($base-colors, 'white'),
+	'accent': map-get($base-colors, 'blue'),
+	// 'accent-hover-color': darken(map-get($base-colors, 'orange'), 10%),
+	// 'accent-active-color': darken(map-get($base-colors, 'orange'), 20%),
+	// // 'secondary-color': map-get($base-colors, 'yellow'),
+	// 'body-color': map-get($base-colors, 'black'),
+	// 'body-bg': map-get($base-colors, 'white'),
 }
 
 $colors = merge($base-colors, $brand-colors)
