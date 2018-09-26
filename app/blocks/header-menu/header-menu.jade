@@ -1,3 +1,5 @@
+include /blocks/icon/icon
+
 .container
 	+b.header-menu
 		+e('nav').main-menu
@@ -8,6 +10,7 @@
 					if val['sub-menu'].length
 						li.sub-menu
 							a(href="#{val.link}") #{val['nav-item-name']}
+							+icon('icon-chevron-down', true).icon-chevron-down
 							ul
 								each item in val['sub-menu']
 									li

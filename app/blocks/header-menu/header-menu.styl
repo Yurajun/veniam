@@ -1,10 +1,20 @@
 .header-menu
 	display flex
 	width 100%
+	color colors('white')
 	border-top 2px solid colors('dark-blue')
 
 	a
 		font-size px2rem(15px)
+
+	.icon-chevron-down
+		size(18px)
+		fill none
+		stroke colors('white')
+		stroke-width 2
+		stroke-linecap round
+		stroke-linejoin round
+		transition stroke transition-time
 
 	&__main-menu
 		flex 1 1 auto
@@ -25,18 +35,19 @@
 					transition opacity transition-time
 
 		>ul>li.sub-menu
-			&:before
+			position relative
+			padding-right 39px
+			padding-left 25px
+			transition background-color transition-time
+			.icon-chevron-down
 				position absolute
-				top 0
-				right 0
-				left -15px
-				bottom 0
-				content ''
-				background-color transparent
-				transition background-color transition-time
+				top 50%
+				right 15px
+				transform translateY(-50%)
 			+hover-focus-active()
-				&:before
-					background-color colors('white')
+				background-color colors('white')
+				.icon-chevron-down
+					stroke colors('dark-blue')
 				ul
 					visibility visible
 					overflow hidden
@@ -91,9 +102,76 @@
 	&__extra-menu
 		position relative
 		background-color colors('white')
-		size(61px, 28px)
-		flex-shrink 1
+		flex-shrink 0
+		width 60px
+
+	.menu-button
+		position relative
+		width 100%
+		height 100%
+		span
+			position absolute
+			top 50%
+			right 20px
+			left 20px
+			display block
+			height 3px
+			background-color colors('dark-blue')
+			transform translateY(-50%)
+			&:before,
+			&:after
+				position absolute
+				right 0
+				left 0
+				height 3px
+				content ''
+				background-color colors('dark-blue')
+			&:before
+				top -7px
+			&:after
+				bottom -7px
 		ul
 			position absolute
-			display none
-			width 100%
+			top 100%
+			right 0
+			visibility hidden
+			overflow hidden
+			min-width 250px
+			border-radius 0 0 5px 5px
+			opacity 0
+			transition opacity transition-time
+			li
+				position relative
+				border-bottom 1px solid rgba(colors('black'), .3)
+				&:last-of-type
+					padding-bottom 4px
+					border-bottom none
+				&:before
+					position absolute
+					top -1px
+					right 0
+					left 0
+					bottom -1px
+					content ''
+					background-color transparent
+					transition background-color transition-time
+		ul li
+			+hover-focus-active()
+				&:before
+					background-color colors('blue')
+			a
+				position relative
+				z-index 1
+				padding-x(15px)
+				display block
+				line-height px2rem(38px)
+				text-decoration none
+				color colors('dark-blue')
+				transition color transition-time
+				+hover-focus-active()
+					color colors('white')
+		&:hover
+			ul
+				visibility visible
+				opacity 1
+
