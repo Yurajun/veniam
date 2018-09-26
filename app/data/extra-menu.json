@@ -1,0 +1,18 @@
+[
+	{
+		"nav-item-name": "Пункт номер один",
+		"link": "javascript:;"
+	},
+	{
+		"nav-item-name": "Пункт номер два",
+		"link": "javascript:;"
+	},
+	{
+		"nav-item-name": "Пункт номер три",
+		"link": "javascript:;"
+	},
+	{
+		"nav-item-name": "Пункт номер четыре",
+		"link": "javascript:;"
+	}
+]

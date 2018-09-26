@@ -1,8 +1,14 @@
 extends /blocks/layout-default/layout-default
 
+include /blocks/s-section/s-section
+
 block head
-	- var pageTitle = 'CSSSR Project Template';
+	- var pageTitle = 'VENIAM';
 
 block content
 	.wrapper
-		.container
+		+s-section
+			include /blocks/header-info/header-info
+		+s-section._theme_dark-blue
+			include /blocks/header-menu/header-menu
+

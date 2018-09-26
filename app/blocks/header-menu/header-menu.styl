@@ -1,0 +1,99 @@
+.header-menu
+	display flex
+	width 100%
+	border-top 2px solid colors('dark-blue')
+
+	a
+		font-size px2rem(15px)
+
+	&__main-menu
+		flex 1 1 auto
+		>ul
+			display flex
+			justify-content space-between
+			>li
+				position relative
+				padding 14px 10px 21px
+				cursor pointer
+				>ul
+					position absolute
+					top 100%
+					left 0
+					visibility hidden
+					min-width 250px
+					opacity 0
+					transition opacity transition-time
+
+		>ul>li.sub-menu
+			&:before
+				position absolute
+				top 0
+				right 0
+				left -15px
+				bottom 0
+				content ''
+				background-color transparent
+				transition background-color transition-time
+			+hover-focus-active()
+				&:before
+					background-color colors('white')
+				ul
+					visibility visible
+					overflow hidden
+					border-radius 0 0 5px 5px
+					opacity 1
+
+				ul li:last-of-type
+					padding-bottom 4px
+					border-bottom none
+				>a
+					position relative
+					color colors('dark-blue')
+
+		>ul>li>a
+			line-height px2rem(20px)
+			text-decoration none
+			color colors('white')
+			transition color transition-time
+		>ul>li
+			+hover-focus-active()
+				>a
+					color colors('blue')
+
+		>ul>li.sub-menu ul li
+			position relative
+			border-bottom 1px solid rgba(colors('black'), .3)
+			&:before
+				position absolute
+				top -1px
+				right 0
+				left 0
+				bottom -1px
+				content ''
+				background-color transparent
+				transition background-color transition-time
+			+hover-focus-active()
+				&:before
+					background-color colors('blue')
+
+		>ul>li.sub-menu ul a
+			position relative
+			z-index 1
+			padding-x(15px)
+			display block
+			line-height px2rem(38px)
+			text-decoration none
+			color colors('dark-blue')
+			transition color transition-time
+			+hover-focus-active()
+				color colors('white')
+
+	&__extra-menu
+		position relative
+		background-color colors('white')
+		size(61px, 28px)
+		flex-shrink 1
+		ul
+			position absolute
+			display none
+			width 100%

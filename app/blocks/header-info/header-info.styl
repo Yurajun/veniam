@@ -1,0 +1,45 @@
+.header-info
+	padding 22px 0 20px
+	display flex
+	width 100%
+	font-size px2rem(15px)
+	justify-content space-between
+	align-items center
+
+	&__feedback-box
+		display flex
+		justify-content space-between
+
+.time-work
+	display flex
+	justify-content space-between
+	&__wrapp-icon
+		position relative
+		margin-top 4px
+		padding-right 13px
+		&:after
+			position absolute
+			top 0
+			right 0
+			width 1px
+			height 25px
+			content ''
+			background-color rgba(colors('black'), .3)
+		.icon
+			size(22px)
+			stroke colors('dark-blue')
+			stroke-width 20
+			fill colors('dark-blue')
+	&__wrapp-phons
+		padding-left 11px
+		p
+			color colors('gray-dark')
+		a
+			font-size px2rem(16px)
+			font-weight bold
+			text-decoration none
+			color colors('black')
+			transition color transition-time
+			+hover-focus-active()
+				color rgba(colors('black'), .5)
+				

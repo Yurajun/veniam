@@ -1,0 +1,59 @@
+[
+	{
+		"nav-item-name": "О компании",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Каталог",
+		"link": "javasctipt:;",
+		"sub-menu": [
+			{
+				"nav-item-name": "Пункт номер один",
+				"link": "javasctipt:;"
+			},
+			{
+				"nav-item-name": "Пункт номер два",
+				"link": "javasctipt:;"
+			},
+			{
+				"nav-item-name": "Пункт номер три",
+				"link": "javasctipt:;"
+			},
+			{
+				"nav-item-name": "Пункт номер четыре",
+				"link": "javasctipt:;"
+			}
+		]
+	},
+	{
+		"nav-item-name": "Доставка и оплата",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Отзовы",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Новости",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Статьи",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Фотогалерея",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	},
+	{
+		"nav-item-name": "Контакты",
+		"link": "javasctipt:;",
+		"sub-menu": []
+	}
+]

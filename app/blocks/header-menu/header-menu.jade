@@ -1,0 +1,27 @@
+.container
+	+b.header-menu
+		+e('nav').main-menu
+
+			- var arr = getData('main-menu');
+			ul
+				each val in arr
+					if val['sub-menu'].length
+						li.sub-menu
+							a(href="#{val.link}") #{val['nav-item-name']}
+							ul
+								each item in val['sub-menu']
+									li
+										a(href="#{item.link}") #{item['nav-item-name']}
+
+					else
+						li
+							a(href="#{val.link}") #{val['nav-item-name']}
+
+		+e.extra-menu
+			- var arr = getData('extra-menu')
+			.menu-button
+				span
+				ul
+					each val in arr
+						li
+							a(href="#{val.link}") #{val['nav-item-name']}
