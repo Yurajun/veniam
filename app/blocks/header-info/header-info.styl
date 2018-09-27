@@ -5,14 +5,65 @@
 	font-size px2rem(15px)
 	justify-content space-between
 	align-items center
+	+media-breakpoint-down('xs')
+		flex-wrap wrap
 
 	&__feedback-box
 		display flex
 		justify-content space-between
+		+media-breakpoint-down('xs')
+			margin-top 25px
+			flex-direction column
+			width 100%
+
+	.button-menu
+		position relative
+		display block
+		background-color colors('dark-blue')
+		border-radius 3px
+		size(45px)
+		+media-breakpoint-up('xl')
+			display none
+		span
+			position absolute
+			top 50%
+			right 11px
+			left 11px
+			height 3px
+			background-color colors('white')
+			transition background-color 0s .3s
+			transform translateY(-50%)
+			&:before,
+			&:after
+				position absolute
+				right 0
+				left 0
+				height 3px
+				content ''
+				background-color colors('white')
+			&:before
+				top -8px
+				transition top .3s .3s, transform .3s 0s
+			&:after
+				bottom -8px
+				transition bottom .3s .3s, transform .3s 0s
+			&.is-open
+				background-color transparent
+				&:before
+					top 0
+					transform rotate(45deg)
+					transition top .3s 0s, transform .3s .3s
+				&:after
+					bottom 0
+					transform rotate(-45deg)
+					transition bottom .3s 0s, transform .3s .3s
+
 
 .time-work
 	display flex
 	justify-content space-between
+	+media-breakpoint-down('xs')
+		display none
 	&__wrapp-icon
 		position relative
 		margin-top 4px
