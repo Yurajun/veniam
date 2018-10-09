@@ -1,0 +1,96 @@
+.feedback-form
+	padding 29px 35px
+	display flex
+	flex-direction column
+	text-align center
+	background-color colors('gray-lighter')
+	border-radius 5px
+	box-shadow 0 0 28.71px .29px rgba(colors('lazurit') .26)
+	align-items center
+	.header
+		padding-bottom 25px
+		font-size px2rem(30px)
+		color colors('title-feedback')
+	input:not([type='checkbox']),
+	textarea
+		padding-x(15px)
+		width 309px
+		font-size px2rem(15px)
+		color colors('shape-blue-3')
+		border 1px solid colors('input-outline')
+		border-radius 5px
+		transition all transition-time
+		&:focus
+			border-color colors('focuse-input')
+			box-shadow 0 0 4px 0 colors('focuse-input')
+	input:not([type='checkbox'])
+		margin-bottom 11px
+		line-height px2rem(43px)
+		&::placeholder
+			color colors('shape-blue-3')
+			opacity 1
+	textarea
+		margin-bottom 11px
+		padding-y(6px)
+		line-height 1.6
+	input[type='email']
+		margin-bottom 30px
+
+	label.politics-agree
+		margin-bottom 25px
+		display flex
+		font-size px2rem(13px)
+		color colors('politics-agree')
+		align-items center
+		justify-content space-between
+		a
+			position relative
+			text-decoration none
+			color $col = colors('politics-agree-a')
+			&:after
+				position absolute
+				right 0
+				left 0
+				bottom 0
+				height 1px
+				content ''
+				background-color $col
+		input
+			position relative
+			z-index -1
+			opacity 0
+			+ span
+				position relative
+				display inline-block
+				width 17px
+				height 17px
+				cursor pointer
+				background-color colors('shape-blue-4')
+				border-radius 2px
+				&:after
+					position absolute
+					top 50%
+					left 50%
+					width 4px
+					height 7px
+					content ''
+					border 2px solid colors('white')
+					border-top none
+					border-left none
+					opacity 0
+					transform translate(-50%, -70%) rotate(45deg)
+					transition opacity transition-time
+			&:checked + span:after
+				opacity 1
+
+	input[type='submit']
+		margin-bottom 0
+		padding-x(24px)
+		display inline
+		width auto
+		background-color colors('white')
+		transition all transition-time
+		&:hover
+			color colors('white')
+			background-color colors('shape-blue-4')
+			border-color colors('shape-blue-4')

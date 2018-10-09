@@ -1,12 +1,67 @@
 .header-hit-sale
 	padding-top 70px
 	padding-bottom 38px
+	display flex
+	width 100%
+	justify-content space-between
 	&__header
 		font-size px2rem(35px)
 		color colors('black-light')
+	&__navigation-carousel
+		.carousel__arrow
+			position relative
+			background-color colors('white')
+			border none
+			border 1px solid rgba(colors('black'), .21)
+			border-radius 50%
+			outline none
+			size(47px)
+			transition all transition-time
+			+hover-focus-active()
+				background-color colors('blue')
+				border-color transparent
+				.icon-chevron-down
+					stroke colors('white')
+			&_prev
+				margin-right 9px
+			.icon-chevron-down
+				transition stroke transition-time
+				center-h(35px)
+				center-v(35px)
+				fill none
+				stroke colors('blue')
+				stroke-width 2
+				stroke-linecap round
+				stroke-linejoin round
+				^[0..2]_prev ^[3..3] // @stylint ignore
+					margin-left -20px
+					transform rotate(90deg)
+				^[0..2]_next ^[3..3] // @stylint ignore
+					margin-left -15px
+					transform rotate(-90deg)
 
 .wrapper-hit-sale
+	padding-bottom 58px
 	width 100%
+	.owl-stage-outer
+		position relative
+		&:before,
+		&:after
+			position absolute
+			top 0
+			bottom 0
+			display block
+			content ''
+		&:before
+			z-index 90
+			left 0
+			width 400px
+			background-image linear-gradient(to right, colors('gray-lighter'), transparent)
+		&:after
+			z-index 90
+			right 0
+			width 400px
+			background-image linear-gradient(to left, colors('gray-lighter'), transparent)
 	.owl-item
 		background-color colors('white')
 		border-radius 5px
@@ -64,7 +119,7 @@
 				padding 12px 22px 18px
 				display block
 				.hit-sale-desc
-					padding-bottom 20px
+					padding-bottom 35px
 					display block
 					font-size px2rem(14px)
 					color colors('blue')
@@ -76,3 +131,5 @@
 					font-size px2rem(17px)
 					font-weight 600
 					color colors('black-2')
+					i
+						font-size px2rem(15px)
