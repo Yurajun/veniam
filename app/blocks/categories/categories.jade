@@ -1,0 +1,12 @@
+include /blocks/elements/button/button
+
+.container
+	+b.categories
+		+button('Каталог продукции')._theme_dark-blue.js-show-all-categories
+		- var arr = getData('categories');
+		+e('ul').list.js-categories-list
+			each val in arr
+				li
+					a(href="#{val.link}")
+						img(src="./assets/images/#{val.img}" alt="#{val.alt}")
+						span #{val.title}

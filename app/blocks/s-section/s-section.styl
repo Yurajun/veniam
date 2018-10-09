@@ -5,3 +5,13 @@
 		&_dark-blue
 			background-color colors('dark-blue')
 
+		&_border-bottom
+			border-bottom 2px solid colors('light-gray')
+			+media-breakpoint-down('xs')
+				border-bottom none
+		&_border-top
+			border-top none
+			+media-breakpoint-down('xs')
+				border-top 2px solid colors('light-gray')
+		&_light-gray
+			background-color colors('gray-lighter')

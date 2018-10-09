@@ -1,13 +1,15 @@
 import svg4everybody from 'svg4everybody';
 import $ from 'jquery';
+import '../blocks/scripts/functions/equalheaights';
+import 'owl.carousel';
+
+
 
 $(() => {
 	svg4everybody();
 });
 
-// import {appResponse}from '../blocks/scripts/utils/aero.mediaquery';
-// import '../blocks/scripts/functions/equalheaights';
-
-import '../blocks/header-info/header-info';
 import '../blocks/header-menu/header-menu';
-
+import '../blocks/main-slider/main-slider';
+import '../blocks/categories/categories';
+import '../blocks/hit-sales/hit-sales';

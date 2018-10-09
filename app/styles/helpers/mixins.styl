@@ -117,6 +117,18 @@ hover-focus-active()
 		&:hover
 			{block}
 
+center-h($height)
+	position absolute
+	top 50%
+	margin-top (-($height / 2))
+	height $height
+
+center-v($width)
+	position absolute
+	left 50%
+	margin-left (-($width / 2))
+	width $width
+
 -ae-map-serialize($map)
 	$str = ''
 	for $key, $value in $map

@@ -1,0 +1,32 @@
+[
+	{
+		"img": "coat.png",
+		"alt": "Пальто и парки",
+		"title": "Пальто и парки",
+		"link": "javascript:;"
+	},
+	{
+		"img": "sheepskin-coat.png",
+		"alt": "Куртки и дубленки",
+		"title": "Куртки и дубленки",
+		"link": "javascript:;"
+	},
+	{
+		"img": "tranch-coat.png",
+		"alt": "Тренчи",
+		"title": "Тренчи",
+		"link": "javascript:;"
+	},
+	{
+		"img": "blazer.png",
+		"alt": "Блейзеры",
+		"title": "Блейзеры",
+		"link": "javascript:;"
+	},
+	{
+		"img": "knitwear.png",
+		"alt": "Трикотаж",
+		"title": "Трикотаж",
+		"link": "javascript:;"
+	}
+]

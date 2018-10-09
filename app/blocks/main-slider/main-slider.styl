@@ -1,0 +1,61 @@
+.main-slider
+	position relative
+	color colors('white')
+	.container
+		.headers
+			position absolute
+			z-index 20
+			top 53.2%
+			h2
+				font-size px2rem(50px)
+			p
+				font-size px2rem(17px)
+				line-height px2rem(24px)
+
+	.my-owl-nav
+		position absolute
+		top 81%
+		left 50%
+		display flex
+		transform translateX(-50%)
+		align-items center
+		@extends .container
+		.button-section
+			font-size 0
+		.carousel__arrow
+			position relative
+			background-color colors('white')
+			border none
+			border-radius 50%
+			outline none
+			size(47px)
+			transition all transition-time
+			+hover-focus-active()
+				background-color colors('blue')
+				.icon-chevron-down
+					stroke colors('white')
+			&_prev
+				margin-right 9px
+			&_next
+				margin-right 20px
+			.icon-chevron-down
+				transition stroke transition-time
+				center-h(35px)
+				center-v(35px)
+				fill none
+				stroke colors('blue')
+				stroke-width 2
+				stroke-linecap round
+				stroke-linejoin round
+				^[0..2]_prev ^[3..3] // @stylint ignore
+					margin-left -20px
+					transform rotate(90deg)
+				^[0..2]_next ^[3..3] // @stylint ignore
+					margin-left -14px
+					transform rotate(-90deg)
+		.number-section
+			font-size px2rem(25px)
+			flex-shrink 0
+			letter-spacing -2.7px
+			.current-number
+				font-weight bold

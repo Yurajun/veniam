@@ -1,0 +1,20 @@
+[
+	{
+		"img": "slider.jpg",
+		"alt": "slide number 1",
+		"header": "Найдите новую одежду",
+		"description": "Обновите ваш гардероб к новому сезону!"
+	},
+	{
+		"img": "slider.jpg",
+		"alt": "slide number 2",
+		"header": "Найдите новую одежду",
+		"description": "Обновите ваш гардероб к новому сезону!"
+	},
+	{
+		"img": "slider.jpg",
+		"alt": "slide number 3",
+		"header": "Найдите новую одежду",
+		"description": "Обновите ваш гардероб к новому сезону!"
+	}
+]

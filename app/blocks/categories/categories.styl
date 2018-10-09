@@ -1,0 +1,43 @@
+.categories
+	padding 76px 0 48px
+	width 100%
+	+media-breakpoint-down('xs')
+		padding 17px 0 0
+		display block
+	.button
+		display none
+		+media-breakpoint-down('xs')
+			display block
+			width 100%
+	&__list
+		display flex
+		justify-content space-between
+		+media-breakpoint-down('xs')
+			padding-y(10px)
+			display block
+		li
+			flex-shrink 0
+			+media-breakpoint-down('xs')
+				display none
+			a
+				display flex
+				flex-direction column
+				text-align center
+				text-decoration none
+				color colors('dark-blue')
+				+hover-focus-active()
+					text-decoration underline
+				+media-breakpoint-down('xs')
+					flex-direction row
+					line-height px2rem(50px)
+					align-items center
+				img
+					+media-breakpoint-down('xs')
+						margin-right 20px
+						width 40px
+						height auto
+				span
+					margin-top -33px
+					font-size px2rem(14px)
+					+media-breakpoint-down('xs')
+						margin-top 0

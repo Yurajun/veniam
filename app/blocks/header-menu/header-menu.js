@@ -47,14 +47,16 @@ const mqOpenCloseMenu = () => {
 	if (appResponse.MediaQuery.app.bp.name === 'xs'){
 		if (!$html.is('.mobile')){
 			$html.addClass('mobile');
-			$($buttonExtraMenu).find('ul').hide();
+			$html.removeClass('desctop');
 		}
-	}else if ($html.is('.mobile')){
+	}else if (!$html.is('.desctop')){
+		$html.addClass('desctop');
 		$html.removeClass('mobile');
 		$buttonOpenCloseMenu.trigger('click');
 		$('.js-button-main-menu.is-open').trigger('click');
 		$subMenu.trigger('click');
 		$backLinkSubMenu.trigger('click');
+		$($buttonExtraMenu).find('ul').css('display', 'block');
 	}
 };
 

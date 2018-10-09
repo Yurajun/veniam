@@ -1,0 +1,112 @@
+[
+	{
+		"link": "javascript:;",
+		"img": "shirt-1.png",
+		"alt": "Рубашка черная",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Плотная рубашка из эластичной джинсовой ткани",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "shirt-2.png",
+		"alt": "Рубашка черная",
+		"hit-sales": "Хит продаж",
+		"stock": "Акция",
+		"to-basket": "icon-basket.png",
+		"in-basket": "in-basket.png",
+		"title": "Плотная рубашка из эластичной джинсовой ткани",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-1.png",
+		"alt": "Футболка с заклепками",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "in-basket.png",
+		"title": "Футболка с заклепками",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-2.png",
+		"alt": "Футболка с эффектом разрывов",
+		"hit-sales": "Хит продаж",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Футболка с эффектом разрывов",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-2.png",
+		"alt": "Футболка с эффектом разрывов",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Футболка с эффектом разрывов",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "shirt-1.png",
+		"alt": "Рубашка черная",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Плотная рубашка из эластичной джинсовой ткани",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "shirt-2.png",
+		"alt": "Рубашка черная",
+		"hit-sales": "Хит продаж",
+		"stock": "Акция",
+		"to-basket": "icon-basket.png",
+		"in-basket": "",
+		"title": "Плотная рубашка из эластичной джинсовой ткани",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-1.png",
+		"alt": "Футболка с заклепками",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "in-basket.png",
+		"title": "Футболка с заклепками",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-2.png",
+		"alt": "Футболка с эффектом разрывов",
+		"hit-sales": "Хит продаж",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Футболка с эффектом разрывов",
+		"price": "5 999"
+	},
+	{
+		"link": "javascript:;",
+		"img": "jersey-2.png",
+		"alt": "Футболка с эффектом разрывов",
+		"hit-sales": "",
+		"stock": "",
+		"to-basket": "",
+		"in-basket": "",
+		"title": "Футболка с эффектом разрывов",
+		"price": "5 999"
+	}
+]

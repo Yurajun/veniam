@@ -1,0 +1,9 @@
+.main-slider.owl-carousel.js-main-slider
+	- var arr = getData('main-slider');
+	each val, key in arr
+		.slide
+			img(src="./assets/images/#{val.img}" alt="#{val.alt}")
+			.container
+				.headers
+					h2 #{val.header}
+					p #{val.description}

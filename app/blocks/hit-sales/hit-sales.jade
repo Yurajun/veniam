@@ -1,0 +1,27 @@
+.container
+	+b.header-hit-sale
+		+e('h2').header
+			| Хиты продаж
+		+e.navigation-carousel.js-navigation-hit-sale
+
+.container
+	+b.wrapper-hit-sale
+		- var arr = getData('hit-sales');
+		+b.owl-carousel.js-hit-sales-carousel
+			each val in arr
+				+b('a').slide&attributes({'href': val.link})
+					+e.wrapp-good
+						span.section-text
+							if val['hit-sales']
+								span.stock #{val['hit-sales']}
+							if val['stock']
+								span.stock #{val['stock']}
+						span.section-img
+							if val['to-basket']
+								img(src="./assets/images/#{val['to-basket']}" alt="иконка корзины").to-basket
+							if val['in-basket']
+								img(src="./assets/images/#{val['in-basket']}" alt="товар в корзине").in-basket
+						img.goods(src="./assets/images/#{val.img}" alt="#{val.alt}")
+					+e.wrapp-desc
+						span.hit-sale-desc #{val.title}
+						span.hit-sale-price #{val.price}
