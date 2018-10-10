@@ -1,15 +1,18 @@
-+b('form').feedback-form(action="#" data-validate="Y")
++b('form').feedback-form.js-form(action="#" data-validate="Y")
+	+b.form-success.js-form-success
+		p Спасибо, что доверяете нам. Наши операторы скоро свяжутся с вами.
+
 	h2.header Связаться с нами
 
 	input(type="hidden" name="admin_email" value="yurajun@mail.ru")
 	input(type="hidden" name="form_subject" value="Форма обратной связи с сайта VENIAM")
 
 	label
-		input(type="text" name="name" required placeholder="Ваше имя" autocomplete="off")
+		input.js-name-valid(type="text" name="name" required placeholder="Ваше имя" autocomplete="off")
 	label
-		input(type="text" name="phone" required placeholder="+7 (900) 000 00 00" autocomplete="off" data-mask="+7 (999) 999-99-99")
+		input.js-phone-valid(type="text" name="phone" required placeholder="+7 (900) 000 00 00" autocomplete="off" data-mask="+7 (999) 999-99-99")
 	label
-		input(type="email" name="email" required placeholder="Электронная почта" autocomplete="off")
+		input.js-email-valid(type="email" name="email" required placeholder="Электронная почта" autocomplete="off")
 
 	label
 		textarea(placeholder="Текст сообщения" autocomplete="off" rows="7" name="text")
@@ -18,7 +21,7 @@
 		| Согласен с&nbsp;
 		a(href="javascript:;")
 			| политикой конфиденциальности
-		input(type="checkbox" checked="checked")
+		input.js-check-valid(type="checkbox" name="subscribe" checked required )
 		span
 
 	input(type="submit" value="Отправить")

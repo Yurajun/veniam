@@ -2,6 +2,7 @@
 	padding 29px 35px
 	display flex
 	flex-direction column
+	max-width 381px
 	text-align center
 	background-color colors('gray-lighter')
 	border-radius 5px
@@ -23,6 +24,9 @@
 		&:focus
 			border-color colors('focuse-input')
 			box-shadow 0 0 4px 0 colors('focuse-input')
+		&.error
+			border-color colors('shape-red-3')
+			box-shadow 0 0 4px 0 colors('shape-red-3')
 	input:not([type='checkbox'])
 		margin-bottom 11px
 		line-height px2rem(43px)
@@ -59,7 +63,7 @@
 			position relative
 			z-index -1
 			opacity 0
-			+ span
+			~ span
 				position relative
 				display inline-block
 				width 17px
@@ -80,8 +84,11 @@
 					opacity 0
 					transform translate(-50%, -70%) rotate(45deg)
 					transition opacity transition-time
-			&:checked + span:after
+			&:checked ~ span:after
 				opacity 1
+			&.error ~ span
+				border 1px solid colors('shape-red-3')
+				box-shadow 0 0 4px 0 colors('shape-red-3')
 
 	input[type='submit']
 		margin-bottom 0
@@ -94,3 +101,28 @@
 			color colors('white')
 			background-color colors('shape-blue-4')
 			border-color colors('shape-blue-4')
+
+	.form-success
+		position absolute
+		z-index 10
+		top 0
+		right 0
+		left 0
+		bottom 0
+		display none
+		text-transform uppercase
+		background-color rgba(colors('lazurit'), .6)
+		border-radius 5px
+		p
+			margin auto
+			display inline-block
+			font-size px2rem(26px)
+			text-align center
+			color colors('white')
+		& ~ * // @stylint ignore
+			transition opacity .5s ease, filter .5s ease
+		&.active
+			display flex
+			& ~ * // @stylint ignore
+				opacity 5
+				filter blur(10px)
