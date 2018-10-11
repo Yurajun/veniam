@@ -2,19 +2,19 @@
 	{
 		"img": "slider.jpg",
 		"alt": "slide number 1",
-		"header": "Найдите новую одежду",
+		"header": "Найдите новую одежду 1",
 		"description": "Обновите ваш гардероб к новому сезону!"
 	},
 	{
 		"img": "slider.jpg",
 		"alt": "slide number 2",
-		"header": "Найдите новую одежду",
+		"header": "Найдите новую одежду 2",
 		"description": "Обновите ваш гардероб к новому сезону!"
 	},
 	{
 		"img": "slider.jpg",
 		"alt": "slide number 3",
-		"header": "Найдите новую одежду",
+		"header": "Найдите новую одежду 3",
 		"description": "Обновите ваш гардероб к новому сезону!"
 	}
 ]

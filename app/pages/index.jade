@@ -12,10 +12,11 @@ block header
 	+s-section._theme_dark-blue
 		include /blocks/header-menu/header-menu
 
-block content
+block slider
 	+s-section._theme_dark-blue
 		include /blocks/main-slider/main-slider
 
+block content
 	+s-section._theme_border-bottom._theme_border-top
 		include /blocks/categories/categories
 
@@ -25,7 +26,11 @@ block content
 	+s-section._theme_light-gray._white-border-bottom
 		include /blocks/hit-sales/hit-sales
 
-	+s-section
+	+s-section._white-border-bottom
 		include /blocks/map/map
 			block feedback-form
 				include /blocks/feedback-form/feedback-form
+
+block footer
+	+s-section
+		include /blocks/footer/footer

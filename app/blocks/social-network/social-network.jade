@@ -1,0 +1,7 @@
+mixin social-network(arr)
+	- set_bemto_settings({ prefix: '' })
+	+b.social-network&attributes(attributes)
+		block
+		each val in arr
+			a(href="#{val.link}")
+				img(src="./assets/images/#{val['img']}" alt="#{val.alt}")

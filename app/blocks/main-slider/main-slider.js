@@ -37,10 +37,20 @@ const mainSlider = () => {
 							<span class="total-number js-owl-total-number">${$sliderOwlCarousel.find('.owl-item:not(.cloned)').length}</span>
 						</div>
 					</div>`);
+			},
+			onChanged(event) {
+				const $numberContainer = $('.js-owl-current-number');
+				if (event.item.index > 1){
+					$numberContainer.text(event.item.index - 1);
+				}else {
+					$numberContainer.text($sliderOwlCarousel.find('.owl-item:not(.cloned)').length);
+				}
+				// Хотя можно было добавить id в html и зачитывать его.
 			}
 		});
 	}
 };
+
 
 mainSlider();
 
@@ -49,21 +59,14 @@ $(window).on('resize', () => {
 });
 
 $('body').on('click', '.js-carousel-owl-next', e => {
-	const $carousel = $(e.currentTarget).closest('.owl-carousel');
+	const $carousel = $(e.currentTarget).closest('.js-main-slider');
 	$carousel.trigger('next.owl.carousel');
 	const sliderActive = $carousel.find('.owl-item:not(.cloned)').map((ind, elem) => {if ($(elem).is('.active')){ return ind + 1;}})[0];
 	$('.js-owl-current-number').text(sliderActive);
 });
 
 $('body').on('click', '.js-carousel-owl-prev', e => {
-	const $carousel = $(e.currentTarget).closest('.owl-carousel');
+	const $carousel = $(e.currentTarget).closest('.js-main-slider');
 	$carousel.trigger('prev.owl.carousel');
-	// const owlItemNotCloned =
-	// console.log($carousel.find('.owl-item:not(.cloned)'));
-	// console.log($carousel.find('.owl-item.cloned.active'));
-	const sliderActive = $carousel.find('.owl-item:not(.cloned)')
-		.find('.owl-item.active')
-		.map((ind, elem) => {if ($(elem).is('.active')){ return ind + 1;}})[0];
-	$('.js-owl-current-number').text(sliderActive);
 });
 

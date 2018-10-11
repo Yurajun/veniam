@@ -1,0 +1,46 @@
+include /blocks/logo/logo
+include /blocks/social-network/social-network
+
++b.footer
+	.container
+		+e.info
+			+logo
+			- set_bemto_settings({ prefix: 'f-' })
+			+b.phones
+				p +7 (000) 000-00-00
+				p +7 (000) 000-00-00
+			+b.time
+				p Пн-Пт: с 0:00 до 0:00<br />Сб-Вс:  Выходные
+			+b.location
+				p 000000, Рыбная обл., г. Рыба, ул.<br />Рыба, дом 00, к. 00
+					a(href="javascript:;") Карта проезда
+			+b.line
+
+			+social-network(getData('social-network'))._indent_top._indent_bottom
+
+			- set_bemto_settings({ prefix: 'f-' })
+			+b.copyrighting
+				p Создание и продвижение сайта 
+					a(href="javascript:;") Darvin Studio
+				p
+					a(href="javascript:;") Политика конфиденциальности
+				p © 2017. Все права защищены
+
+		- set_bemto_settings({ prefix: '' })
+		+e.nav
+			- set_bemto_settings({ prefix: 'f-' })
+			+b.nav
+				+e('h2').nav-header Компания
+				- var arr = getData('f-left-menu');
+				+e('ul').list
+					each val in arr
+						li
+							a(href="#{val.link}") #{val['link-name']}
+
+			+b.nav
+				+e('h2').nav-header Каталог
+				- var arr = getData('f-right-menu');
+				+e('ul').list
+					each val in arr
+						li
+							a(href="#{val.link}") #{val['link-name']}

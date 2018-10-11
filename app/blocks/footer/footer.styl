@@ -1,0 +1,113 @@
+.footer
+	&__info
+		position relative
+		padding-top 67px
+		padding-bottom 42px
+		max-width 38.5%
+		background-color colors('gray-lighter')
+		flex 1 1 38.5%
+		&:before
+			position absolute
+			z-index -1
+			top 0
+			right 0
+			left auto
+			bottom 0
+			display block
+			width 100vw
+			content ''
+			background-color colors('gray-lighter')
+		.logo
+			margin-bottom 29px
+		a
+			color colors('shape-blue-5')
+		.f-line
+			width 100%
+			max-width 75%
+			height 1px
+			background-color colors('shape-gray-2')
+	&__nav
+		position relative
+		padding-top 67px
+		display flex
+		max-width 61.5%
+		color colors('white')
+		background-color colors('dark-blue')
+		flex 1 1 61.5%
+		&:before
+			position absolute
+			z-index -1
+			top 0
+			right auto
+			left 0
+			bottom 0
+			display block
+			width 100vw
+			content ''
+			background-color colors('dark-blue')
+
+.f-phones,
+.f-time,
+.f-location
+	margin-bottom 25px
+	position relative
+	padding-left 44px
+	font-size px2rem(15px)
+	color colors('black')
+	&:before
+		position absolute
+		top 0
+		left 0
+		bottom 0
+		width 30px
+		content ''
+		background-repeat no-repeat
+		background-position 50%
+.f-phones
+	font-weight bold
+	color colors('shape-black-2')
+.f-phones:before
+	background-image url(../images/icon-phone.png)
+.f-time:before
+	background-image url(../images/icon-clock.png)
+.f-location:before
+	background-image url(../images/icon-location.png)
+
+.f-copyrighting
+	font-size px2rem(13px)
+	line-height px2rem(20px)
+	color colors('shape-gray-3')
+	
+
+.f-nav
+	width 50%
+	&:first-of-type
+		padding-left 80px
+	&:last-of-type
+		padding-left 30px
+	&__nav-header
+		margin-bottom 30px
+		font-size px2rem(35px)
+		font-weight 300
+	&__list
+		li
+			margin-bottom 15px
+			a
+				position relative
+				left 0
+				padding-left 13px
+				font-size px2rem(16px)
+				line-height px2rem(22px)
+				text-decoration none
+				color colors('white')
+				transition all transition-time
+				&:before
+					position absolute
+					top 0
+					left 0
+					bottom 0
+					width 3px
+					content ''
+					background-color colors('white')
+				&:hover
+					left 15px
