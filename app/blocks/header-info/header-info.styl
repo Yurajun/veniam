@@ -30,6 +30,8 @@
 	.button-menu
 		position relative
 		display block
+		cursor pointer
+		user-select none
 		background-color colors('dark-blue')
 		border-radius 3px
 		size(45px)
@@ -58,7 +60,7 @@
 			&:after
 				bottom -8px
 				transition bottom .3s .3s, transform .3s 0s
-			&.is-open
+			^[-2..-3].is-open span // @stylint ignore
 				background-color transparent
 				&:before
 					top 0
@@ -102,6 +104,6 @@
 			text-decoration none
 			color colors('black')
 			transition color transition-time
-			+hover-focus-active()
+			&:hover
 				color rgba(colors('black'), .5)
 				

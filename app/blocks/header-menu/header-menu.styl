@@ -83,7 +83,7 @@
 					right 0
 					transform rotate(-90deg)
 			+media-breakpoint-up('xl')
-				+hover-focus-active()
+				&:hover
 					background-color colors('white')
 					.icon-chevron-down
 						stroke colors('dark-blue')
@@ -114,6 +114,8 @@
 					background-color colors('dark-blue')
 				a
 					color colors('white')
+					&:hover
+						color colors('blue')
 				li:first-of-type a
 					padding-left 45px
 				li:first-of-type a .icon-chevron-down
@@ -128,7 +130,7 @@
 			color colors('white')
 			transition color transition-time
 		>ul>li
-			+hover-focus-active()
+			&:hover
 				>a
 					color colors('blue')
 
@@ -146,11 +148,11 @@
 				content ''
 				background-color transparent
 				transition background-color transition-time
-			+hover-focus-active()
+			&:hover
 				&:before
 					background-color colors('blue')
 			+media-breakpoint-down('xs')
-				+hover-focus-active()
+				&:hover
 					&:before
 						background-color transparent
 
@@ -165,11 +167,8 @@
 			transition color transition-time
 			+media-breakpoint-down('xs')
 				line-height px2rem(50px)
-			+hover-focus-active()
+			&:hover
 				color colors('white')
-			+media-breakpoint-down('xs')
-				+hover-focus-active()
-					color colors('blue')
 
 	// extra-menu
 	&__extra-menu
@@ -186,6 +185,8 @@
 		position relative
 		width 100%
 		height 100%
+		cursor pointer
+		user-select none
 		background-color colors('white')
 		+media-breakpoint-down('xs')
 			margin-right 20px
@@ -200,6 +201,9 @@
 			height 3px
 			background-color colors('dark-blue')
 			transform translateY(-50%)
+			transition background-color 0s linear .3s
+			^[-2..-3].is-open ^[-1..-1] // @stylint ignore
+				background-color transparent
 			&:before,
 			&:after
 				position absolute
@@ -210,8 +214,18 @@
 				background-color colors('dark-blue')
 			&:before
 				top -7px
+				transition top .3s ease .3s, transform .3s ease 0s
 			&:after
 				bottom -7px
+				transition bottom .3s ease .3s, transform .3s ease 0s
+			^[-2..-3].is-open ^[-1..-1]:before
+				top 0
+				transition top .3s ease 0s, transform .3s ease .3s
+				transform rotate(45deg)
+			^[-2..-3].is-open ^[-1..-1]:after  // @stylint ignore
+				bottom 0
+				transition bottom .3s ease 0s, transform .3s ease .3s
+				transform rotate(-45deg)
 		ul
 			position absolute
 			top 100%
@@ -225,7 +239,7 @@
 			transition opacity transition-time
 
 			+media-breakpoint-down('xs')
-				margin-right -20px
+				margin-right -37px
 				padding-y(15px)
 				display none
 				visibility visible
@@ -233,6 +247,15 @@
 				background-color colors('dark-blue')
 				border-radius 0
 				opacity 1
+				html.is-open ^[-1..-3]
+					margin-right -20px
+					padding-y(15px)
+					display none
+					visibility visible
+					min-width 100vw
+					background-color colors('dark-blue')
+					border-radius 0
+					opacity 1
 			li
 				position relative
 				border-bottom 1px solid rgba(colors('black'), .3)
@@ -251,9 +274,10 @@
 					background-color transparent
 					transition background-color transition-time
 		ul li
-			+hover-focus-active()
-				&:before
-					background-color colors('blue')
+			+media-breakpoint-up('xl')
+				&:hover
+					&:before
+						background-color colors('blue')
 			a
 				position relative
 				z-index 1
@@ -263,12 +287,14 @@
 				text-decoration none
 				color colors('dark-blue')
 				transition color transition-time
+				&:hover
+					color colors('white')
 				+media-breakpoint-down('xs')
-					padding-x(20px)
+					padding-x(40px, 20px)
 					line-height px2rem(50px)
 					color colors('white')
-				+hover-focus-active()
-					color colors('white')
+					&:hover
+						color colors('blue')
 		+media-breakpoint-up('xl')
 			&:hover
 				ul

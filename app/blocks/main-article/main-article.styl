@@ -4,17 +4,51 @@
 	color colors('black-light')
 	justify-content space-between
 	align-items flex-end
+	+media-breakpoint-down('xs')
+		padding 23px 0 40px
+		flex-direction column-reverse
+		align-items flex-start
 
 	&__wrapper-text
 		padding-right 50px
 		font-size px2rem(15px)
-		
+		.button
+			display none
+		+media-breakpoint-down('xs')
+			padding-right 0
+			.button
+				display block
+				width 100%
+			p:not(:first-of-type)
+				display none
+
 		h1
 			margin-bottom 20px
 			font-size px2rem(50px)
 			font-weight 300
+			+media-breakpoint-down('xs')
+				display none
 		p
 			margin-bottom 18px
 			line-height 1.37
+			+media-breakpoint-down('xs')
+				margin-bottom 25px
 			&:last-of-type
 				margin-bottom 0
+				+media-breakpoint-down('xs')
+					margin-bottom 25px
+
+	&__wrapper-img
+		+media-breakpoint-down('xs')
+			width 100%
+			h1
+				margin-bottom 45px
+				display block
+				font-size px2rem(35px)
+			img
+				margin-bottom 30px
+				width 100%
+				height auto
+		+media-breakpoint-up('xl')
+			h1
+				display none

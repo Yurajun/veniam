@@ -11,6 +11,7 @@ const $backLinkSubMenu     = $('.js-header-menu .sub-menu ul li:first-child a');
 const $buttonExtraMenu     = $('.js-extra-menu');
 
 $buttonOpenCloseMenu.on('click', e => {
+	e.preventDefault();
 	const $button = $(e.currentTarget);
 	if (!$button.is('.is-open')){
 		$button.addClass('is-open');
@@ -18,10 +19,13 @@ $buttonOpenCloseMenu.on('click', e => {
 	}else {
 		$button.removeClass('is-open');
 		$html.removeClass('is-open');
+		$buttonExtraMenu.find('ul').css('display', 'none');
+		$buttonExtraMenu.find('.menu-button').removeClass('is-open');
 	}
 });
 
 $subMenu.on('click', e => {
+	e.preventDefault();
 	if ($html.is('.mobile')){
 		$(e.currentTarget).addClass('is-open');
 	}else {
@@ -30,16 +34,23 @@ $subMenu.on('click', e => {
 });
 
 $backLinkSubMenu.on('click', e => {
+	e.preventDefault();
 	e.stopPropagation();
 	$(e.currentTarget).closest('.sub-menu').removeClass('is-open');
 });
 
 $buttonExtraMenu.on('click', e => {
-	console.log($(e.currentTarget).find('ul'));
+	e.preventDefault();
+	if ($(e.target).closest('ul').length){
+		return false;
+	}
+	const $currentElement = $(e.currentTarget);
 	if ($html.is('.mobile') && $(e.currentTarget).find('ul').is(':hidden')){
-		$(e.currentTarget).find('ul').slideDown();
+		$currentElement.find('ul').slideDown();
+		$currentElement.find('.menu-button').addClass('is-open');
 	}else if ($html.is('.mobile')){
-		$(e.currentTarget).find('ul').slideUp();
+		$currentElement.find('ul').slideUp();
+		$currentElement.find('.menu-button').removeClass('is-open');
 	}
 });
 
@@ -48,6 +59,7 @@ const mqOpenCloseMenu = () => {
 		if (!$html.is('.mobile')){
 			$html.addClass('mobile');
 			$html.removeClass('desctop');
+			$buttonExtraMenu.find('ul').css('display', 'none');
 		}
 	}else if (!$html.is('.desctop')){
 		$html.addClass('desctop');
@@ -56,7 +68,8 @@ const mqOpenCloseMenu = () => {
 		$('.js-button-main-menu.is-open').trigger('click');
 		$subMenu.trigger('click');
 		$backLinkSubMenu.trigger('click');
-		$($buttonExtraMenu).find('ul').css('display', 'block');
+		$buttonExtraMenu.find('ul').css('display', 'block');
+		$buttonExtraMenu.find('.menu-button').removeClass('is-open');
 	}
 };
 

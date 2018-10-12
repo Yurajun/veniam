@@ -1,29 +1,39 @@
 /* global $ */
+import {appResponse}from '../scripts/utils/aero.mediaquery';
 import {parseStyleToObject}from '../scripts/utils/aero.utilities';
 
 const {xs, xl}             = parseStyleToObject($('meta.aero-mq').css('font-family'));
 const $hitSalseCarousel    = $('.js-hit-sales-carousel');
 const $containerNavHitSale = $('.js-navigation-hit-sale');
+const gapSlide             = 20;
 
 $hitSalseCarousel.owlCarousel({
 	loop: true,
 	nav: false,
-	margin: 20,
 	responsive: {
 		[parseInt(xl, 10)]: {
-			items: 3
+			items: 3,
+			margin: gapSlide,
+			dots: false
 		},
 		[parseInt(xs, 10)]: {
-			items: 1
+			items: 1,
+			dots: true,
+			margin: 22,
+			autoHeight: true
 		}
 	},
 	onInitialized() {
-		$hitSalseCarousel.find('.owl-stage-outer')
-			.css({
-				'margin-left': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + 20}px`,
-				'margin-right': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + 20}px`
-			})
-			.find('.slide').equalHeights();
+		if (appResponse.MediaQuery.app.bp.name === 'xl'){
+			setTimeout(() => {
+				$hitSalseCarousel.find('.owl-stage-outer')
+					.css({
+						'margin-left': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + gapSlide}px`,
+						'margin-right': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + gapSlide}px`
+					})
+					.find('.owl-item').equalHeights();
+			}, 0);
+		}
 		$containerNavHitSale.append(`
 			<div class="hit-sale-nav">
 				<button class="carousel__arrow carousel__arrow_prev js-carousel-hit-owl-prev">
@@ -34,6 +44,27 @@ $hitSalseCarousel.owlCarousel({
 				</button>
 			</div>
 		`);
+	},
+	onChanged() {
+		if (appResponse.MediaQuery.app.bp.name === 'xs'){
+			setTimeout(() => {
+				$hitSalseCarousel.find('.owl-stage-outer')
+					.css({
+						'margin-left': 0,
+						'margin-right': 0
+					})
+					.find('.owl-item').equalHeights();
+			}, 0);
+		}else {
+			setTimeout(() => {
+				$hitSalseCarousel.find('.owl-stage-outer')
+					.css({
+						'margin-left': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + gapSlide}px`,
+						'margin-right': `-${$hitSalseCarousel.find('.owl-item').outerWidth() + gapSlide}px`
+					})
+					.find('.owl-item').equalHeights();
+			}, 0);
+		}
 	}
 });
 

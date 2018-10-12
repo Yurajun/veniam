@@ -12,6 +12,7 @@ $(() => {
 
 import '../blocks/header-menu/header-menu';
 import '../blocks/main-slider/main-slider';
+import '../blocks/main-article/main-article';
 import '../blocks/categories/categories';
 import '../blocks/hit-sales/hit-sales';
 import '../blocks/feedback-form/feedback-form';

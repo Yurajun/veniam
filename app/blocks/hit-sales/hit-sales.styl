@@ -4,10 +4,17 @@
 	display flex
 	width 100%
 	justify-content space-between
+	+media-breakpoint-down('xs')
+		padding-top 30px
+		padding-bottom 28px
 	&__header
 		font-size px2rem(35px)
 		color colors('black-light')
 	&__navigation-carousel
+		.hit-sale-nav
+			display block
+			+media-breakpoint-down('xs')
+				display none
 		.carousel__arrow
 			position relative
 			background-color colors('white')
@@ -43,8 +50,13 @@
 .wrapper-hit-sale
 	padding-bottom 58px
 	width 100%
+	+media-breakpoint-down('xs')
+		padding-bottom 30px
 	.owl-stage-outer
 		position relative
+		padding-y(7px)
+		+media-breakpoint-down('xs')
+			overflow visible
 		&:before,
 		&:after
 			position absolute
@@ -58,24 +70,38 @@
 			left 0
 			width 400px
 			background-image linear-gradient(to right, colors('gray-lighter'), transparent)
+			+media-breakpoint-down('xs')
+				background-image none
 		&:after
 			z-index 90
 			right 0
 			width 400px
 			background-image linear-gradient(to left, colors('gray-lighter'), transparent)
+			+media-breakpoint-down('xs')
+				background-image none
 	.owl-item
+		overflow hidden
 		background-color colors('white')
 		border-radius 5px
 		box-shadow 0 1px 3px 0 rgba(colors('shadow-item'), .26)
+		+media-breakpoint-down('xs')
+			box-shadow 0 1px 3px 0 rgba(colors('shadow-item'), .26)
 		.slide
 			display block
+			min-height 100%
 			text-decoration none
+			+media-breakpoint-down('xs')
+				display flex
+				flex-direction column
 			&__wrapp-good
 				position relative
 				display block
 				overflow hidden
 				min-height 273px
 				border-bottom 1px solid colors('gray-2')
+				+media-breakpoint-down('xs')
+					min-height auto
+					flex 1 1 auto
 				.section-text
 					position absolute
 					top 17px
@@ -134,3 +160,14 @@
 					color colors('black-2')
 					i
 						font-size px2rem(15px)
+	.owl-dots
+		margin-top 23px
+		text-align center
+		button.owl-dot
+			margin 0 9px
+			display inline-block
+			background-color colors('shape-blue-6')
+			border-radius 50%
+			size(12px)
+			&.active
+				background-color colors('title-feedback')
