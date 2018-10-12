@@ -8,10 +8,18 @@
 	border-radius 5px
 	box-shadow 0 0 28.71px .29px rgba(colors('lazurit') .26)
 	align-items center
+	+media-breakpoint-down('xs')
+		padding 25px 0
+		width 100%
+		max-width 100%
+		box-shadow none
+		align-items stretch
 	.header
 		padding-bottom 25px
 		font-size px2rem(30px)
 		color colors('title-feedback')
+		+media-breakpoint-down('xs')
+			text-align left
 	input:not([type='checkbox']),
 	textarea
 		padding-x(15px)
@@ -21,6 +29,9 @@
 		border 1px solid colors('input-outline')
 		border-radius 5px
 		transition all transition-time
+		+media-breakpoint-down('xs')
+			display block
+			min-width 100%
 		&:focus
 			border-color colors('focuse-input')
 			box-shadow 0 0 4px 0 colors('focuse-input')

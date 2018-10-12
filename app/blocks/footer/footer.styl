@@ -6,6 +6,9 @@
 		max-width 38.5%
 		background-color colors('gray-lighter')
 		flex 1 1 38.5%
+		+media-breakpoint-down('xs')
+			max-width 100%
+			flex 1 1 100%
 		&:before
 			position absolute
 			z-index -1
@@ -17,6 +20,10 @@
 			width 100vw
 			content ''
 			background-color colors('gray-lighter')
+
+			+media-breakpoint-down('xs')
+				right -20px
+				left -20px
 		.logo
 			margin-bottom 29px
 		a
@@ -34,6 +41,8 @@
 		color colors('white')
 		background-color colors('dark-blue')
 		flex 1 1 61.5%
+		+media-breakpoint-down('xs')
+			display none
 		&:before
 			position absolute
 			z-index -1
@@ -77,10 +86,11 @@
 	font-size px2rem(13px)
 	line-height px2rem(20px)
 	color colors('shape-gray-3')
-	
 
 .f-nav
 	width 50%
+	+media-breakpoint-down('xs')
+		display none
 	&:first-of-type
 		padding-left 80px
 	&:last-of-type
@@ -111,3 +121,8 @@
 					background-color colors('white')
 				&:hover
 					left 15px
+
+.f-nav-mobile
+	display none
+	+media-breakpoint-down('xs')
+		display block

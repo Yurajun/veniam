@@ -8,10 +8,16 @@
 		right 0
 		left 0
 		bottom 0
-		// filter contrast(1.2)
+		+media-breakpoint-down('xs')
+			position relative
+			height 345px
 	&__wrapp-feedback-form
 		position relative
 		padding 46px 0 78px
+		+media-breakpoint-down('xs')
+			padding-top 0
+			padding-bottom 0
+			background-color colors('gray-lighter')
 		.container
 			display flex
 			justify-content flex-end

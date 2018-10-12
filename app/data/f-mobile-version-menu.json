@@ -1,0 +1,75 @@
+[
+	{
+		"name-link": "О компании",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Каталог",
+		"link": "javascript:;",
+		"submenu": [
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №1"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №2"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №3"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №4"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №5"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №6"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №7"
+			},
+			{
+				"link": "javascript:;",
+				"name-link": "Пункт №8"
+			}
+		]
+	},
+	{
+		"name-link": "Доставка и оплата",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Отзывы",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Новости",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Статьи",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Фотогалерея",
+		"link": "javascript:;",
+		"submenu": []
+	},
+	{
+		"name-link": "Контакты",
+		"link": "javascript:;",
+		"submenu": []
+	}
+]

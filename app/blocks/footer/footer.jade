@@ -1,8 +1,32 @@
 include /blocks/logo/logo
 include /blocks/social-network/social-network
 
-+b.footer
+//- - set_bemto_settings({ prefix: ''})
+//- - set_bemto_settings({prefix: {'': 'b-', 'js-': 'true', 'is-': 'is-'}})
+
++b.footer.js-footer
 	.container
+		+e.nav-mobile
+			- set_bemto_settings({ prefix: 'f-' });
+			+b.nav-mobile
+				+e('h2').nav-header Компания
+				- set_bemto_settings({ prefix: '' })
+				+e('ul').list.js-mobile-footer-menu
+				- var arr = getData('f-mobile-version-menu');
+					each val in arr
+						if val.submenu.length
+							li.has-sub-menu.js-mobile-footer-sub-menu
+								a(href="#{val.link}") #{val['name-link']}
+								ul
+									each item in val.submenu
+										li
+											a(href="#{item.link}") #{item['name-link']}
+						else
+							li
+								a(href="#{val.link}") #{val['name-link']}
+
+
+		- set_bemto_settings({ prefix: '' })
 		+e.info
 			+logo
 			- set_bemto_settings({ prefix: 'f-' })
