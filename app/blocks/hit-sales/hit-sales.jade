@@ -18,9 +18,9 @@
 								span.stock #{val['stock']}
 						span.section-img
 							if val['to-basket']
-								img(src="./assets/images/#{val['to-basket']}" alt="иконка корзины").to-basket
+								img.to-basket(src="./assets/images/#{val['to-basket']}" alt="иконка корзины")
 							if val['in-basket']
-								img(src="./assets/images/#{val['in-basket']}" alt="товар в корзине").in-basket
+								img.in-basket(src="./assets/images/#{val['in-basket']}" alt="товар в корзине")
 						img.goods(src="./assets/images/#{val.img}" alt="#{val.alt}")
 					+e.wrapp-desc
 						span.hit-sale-desc #{val.title}
